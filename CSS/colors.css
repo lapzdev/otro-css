@@ -1,0 +1,181 @@
+.color-by-name {
+    background-color: coral;
+    /*buscar en htmlcolorscode.com 
+    La lista válida es  nombres de color html*/
+    color: rebeccapurple;
+    border: thick solid greenyellow;
+
+}
+
+/* En Google pones RGB  to  Hex y te sale un convertidor de colores */
+/* Sistema Hexadecimal: Significa que tiene 16 dígitos
+0123456789ABCDEF 
+
+RGB(Red Green Blue)(Se utiliza para medios digitales) vs 
+CMYK(Cyan Magenta Yellow Key(Este es una clave para el negro))(Se utiliza para impresos)
+
+Colores en Hexadecimal van a ser colores de 6 dígitos
+Ejemplo: FF6600 Los dos primeros dígitos representan el canal Red
+el segundo par representa el canal Green
+el tercer par representa el canal Blue.
+Todo Código hexadecimal empieza con el símbolo # (#FF6600)
+
+*/
+.color-hex {
+    background-color: #996622;
+    /*En este caso se puede simplicar a  #962
+    ya cuando dentro de un par los digitos son iguales (66)
+    se pueden simplificar a uno.Ojo: es por cada par R(Red)G(Green)B(Blue)*/
+    color: #820;
+    border: thick solid #d59;
+    /*En el caso de que uno de los pares no tenga
+    números iguales no se puede aplicar la simplificación.*/
+}
+
+/* #ffffff es el blanco
+#000000 es el negro *
+#ff0000 es el rojo
+#00ff00 es el verde
+#0000ff es el azul 
+La opacidad o transparencia de un color se da por la añadidura
+de otro pr de dígitos a la cuenta hexadecimal
+Ej.: #00000050 es un negro con una opacidad de 50%(La opacidad va de 0 a 99.
+100 sería totalmente oscuro por lo que no aplica.
+00 sería como si no tuviera color)*/
+.color-transp {
+    background-color: #00ff0050;
+}
+
+/*Color verde con una transparencia del
+50% */
+/*También se puede trabajar la opacidad de la siguiente manera: 
+0005 --> esto es un color negro absoluto con una opacidad del 50%.
+ojo: aquí los porcientos sólo se pueden aplicar del 10% al 90%
+1-->10% 2-->20% --- hasta 9-->90%.*/
+/* 
+Sistema RGB
+Acepta 8 bits por canal
+Bit-->tiene 2 posibles valores:0 ó 1.
+2 elevado a la potencia 8=2*2*2*2*2*2*2*2=256.
+Cada canal tiene de 0 a 255 valores. Al no empezar desde el valor 1
+no se cuenta el valor 256. */
+.color-rgb {
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 255);
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 102, 0);
+    background-color: rgba(250, 128, 150, .25);
+    /* rgba representa los 
+    colores y la opacidad que está representada en a(alfa)
+    1--> representa el 100%(Sin ninguna transparencia)
+    0-->representa el 0%(Tranparencia total)
+    0.5-->representa el 50% de opacidad
+    0.75-->representa el 75% de opacidad y así con cada porciento.*/
+
+    border: thick solid rgb(128, 150, 62);
+
+}
+
+.position {
+    position: sticky;
+    top: 75px;
+}
+
+.circulo-class {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #820;
+    background-color: aqua;
+
+}
+
+/* HSL: Hue Saturation Lightness(Tono Saturación Luminosidad)
+    
+    El primero es Hue(Círculo Cromático)
+    0 grados->red
+    60 grados->yellow
+    120 grados->green
+    180 grados->cyan
+    240 grados->blue
+    300 grados->magenta
+    El segundo valor es Saturation(Intensidad del Color)
+    0% ->Escala de Grises (Es obligatorio el %)
+    100% ->Color puro
+    El tercer valor es Lightness(Luminosidad del color)
+    0% ->negro( aquí también es obligatorio el %)
+    50%->color puro
+    100% ->blanco
+    */
+.hsl-class {
+    background-color: hsl(0, 100%, 50%);
+    background-color: hsl(120, 100%, 50%);
+    background-color: hsl(240, 100%, 50%);
+    background-color: hsl(30, 100%, 50%);
+    background-color: hsl(30, 100%, 0%);
+    /*Para obtener el negro basta tener en 
+        0% el tercer parámetro(lightness)*/
+    /* background-color:hsl(210, 75% , 65%); */
+    background-color: hsla(30, 100%, 50%, 0.75);
+    /*La opacidad
+        al igual que en rgba está representada en un cuarto parámetro de 0 a 1.
+        1--> representa el 100%(Sin ninguna transparencia)
+    0-->representa el 0%(Tranparencia total)
+    0.5-->representa el 50% de opacidad
+    0.75-->representa el 75% de opacidad y así con cada porciento.
+         */
+    background-color: hsla(0, 100%, 50%, .75);
+    color: hsl(210, 78%, 65%);
+    border: thick solid hsl(126, 58%, 65%);
+}
+
+.hsl-class2 {
+    background-color: hsla(120, 75%, 50%, .5);
+    color: hsla(240, 95%, 53%, .45);
+    border: thick solid hsla(0, 100%, 50%, .8);
+
+}
+
+.hsl-class2 div {
+    margin-bottom: 25px;
+}
+
+.section5-class {
+    color: green;
+}
+
+/* Valor transparent: color transparente es igual rgb(0,0,0,0) 
+           Valor currentColor: hereda el valor por defecto o asignado de la propiedad
+           color, de si mismo,y en caso de no tener definida la propiedad color,
+           del ancestro que tenga definida esta propiedad. Busca del ancestro más cercano al más lejano.
+            */
+.transparent-current-class {
+    background-color: darkmagenta;
+    background-color: transparent;
+    background-color: currentColor;
+    /* color: blue; */
+}
+/* La propiedad Opacity aplica para todas las propiedades CSS que tenga el selector
+al que le estamos aplicando esta propiedad, a diferencia de la opacidad que se le da
+por las propiedades hsla y rgba que se aplican solamente a una propiedad en 
+específico del selector.  */
+.opacity-class{
+    background-color: orchid;
+    color: navy;
+    border: thick solid black;
+    opacity: 0.5;/* La propiedad opacity se aplica sobre todas las 
+    otras propiedades*/
+    opacity: 1;
+    /* opacity: .75; */
+    /* opacity: 0; */      <h2>Colores HSL repaso</h2>
+      <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
+      obcaecati suscipit, quis maxime dolor assumenda quas exercitationem
+      facere error officia explicabo temporibus, voluptas corrupti nihil
+      ducimus architecto non quidem unde!
+      
+    </div>
+
+
+}

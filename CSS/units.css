@@ -1,0 +1,96 @@
+html{scroll-behavior: smooth;}
+html{box-sizing: border-box;}
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+/* 
+Unidades de Medida
+1) Absolutas(Su valor no cambia,son unidades del mundo real)
+pc,cm,mm,in,Q
+pt(1/72in)
+px(1/96in)
+2)Relativas (Su valor es relativo a un contexto)
+em,rem,ex,ch--al tamaño de la fuente
+em-basada en la anchura de la 'm' del tamaño de fuente del propio elemento.
+en caso de no tener definido el font-size,tomará el del ancestro inmediato y
+si no el próximo. En caso de que no, tomara el valor por defecto 1em=16px.
+rem-basada en la anchura de la 'm' de la fuente del elemento raíz(html)
+ex-basada en la altura de la 'x' de la fuente del elemento
+ch-basada en la anchura del '0' de la fuente del elemento
+%-al tamaño del contenedor
+vw,vh,vmin,vmax-al tamaño  el viewport( el viewport es es el area visible de la pantalla
+donde se renderiza el contenido html)
+vw-ancho del viewport(del 1 al 100)
+vh-alto del viewport(del 1 al 100)
+vmax-entre el vw y vh toma el que tenga mayor valor
+vmin-entre vw y vh toma el que tenga menor valor
+
+Conversiones entre unidades -http://pxtoem.com/
+16px=m(para la fuente estandar.En el caso de que el tamaño de la tipografía sea 
+superior al tamaño estandar, como en el caso de un elemento padre con una letra
+m superior a los 16px,el valor m del elemento hijo tomará el nuevo valor
+como referencia)
+*/
+.pixels{
+    background-color: cadetblue;
+    width: 500px;
+    height: 400px;
+    padding: 20px;
+    font-size: 32px;
+    border: 5px solid rebeccapurple;
+}
+.em{ background-color: cadetblue;
+    width: 31.25em;
+    height: 25em;
+    padding: 1.25em;
+    font-size: 2em;
+
+border: 0.3125em solid rebeccapurple;}
+.em-parent{background-color: cadetblue;
+    /* width: 500px; */
+    /* height: 400px; */
+    padding: 20px;
+    font-size: 32px;
+    border: 5px solid rebeccapurple;}
+.em-child-class{background-color: cadetblue;
+    /* width: 500px; */
+    /* height: 400px; */
+    padding: 1em; /*La referencia de tamaño em en este caso es igual a 2*font-size
+    de la fuente del elemento padre, o sea, tomara como base 64px=2*32px.
+    En este caso el padding equivaldrá a 64px;
+    font-size: 2em;/* En este caso el tamaño de la fuente(font-size) es de 64px
+    pues toma como referencia el elemento contenedor cuyo tamaño de fuente es de 32px.
+    En caso de no tener contenedor busca al siguiente ancestro, en este caso el body, y toma como referencia
+    su tamaño de fuente.*/
+    border: 5px solid rgb(142, 34, 120);
+font-size: 2em;}
+
+    /* rem:está basado en la 'm' del elemento raíz(html). html en caso de no ser modificado
+    su tamaño de fuente por defecto es de 16px. */
+    .rem-parent{background-color: cadetblue;
+        /* width: 500px; */
+        /* height: 400px; */
+        padding: 20px;
+        font-size: 32px;
+        border: 5px solid rebeccapurple;}
+    .rem-child-class{background-color: cadetblue;
+        /* width: 500px; */
+        /* height: 400px; */
+        padding: 20px;
+        font-size: 2rem;/*En este caso el tamaño de fuente es 32px ya que el
+        tamaño fuente de html está en 16px(tamaño fuente por defecto)*/
+        border: 5px solid rgb(142, 34, 120);}
+        .ex{background-color: cadetblue;
+            /* width: 500px; */
+            /* height: 400px; */
+            padding: 1ex 0.5ex;
+            font-size: 24px;
+            border: 5px solid rebeccapurple;}
+        .ex-child-class{background-color: cadetblue;
+            /* width: 500px; */
+            /* height: 400px; */
+            margin: 0.5ex;
+            padding: 1ex; 
+            border: 5px solid rgb(142, 34, 120);
+        font-size: 2ex;}
+    

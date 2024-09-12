@@ -1,0 +1,194 @@
+/* 
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/El_modelo_de_caja
+
+Modelo de Caja:Esla forma en que CSS ve a los elementos HTML, y cómo los ve? como si fueran cajas con
+las siguientes propiedades:
+1. El contenido(content): El contenido(texto) del elemento HTML.
+2. El borde(border): Lo que delimita cada uno de los lementos HTML.
+3. El relleno(padding): Son las distancias internas(la distancia del borde al contenido).
+4. El margen(margin): Son las distancias externas(La distancia entre el elemento html y sus elementos 
+hermanos o padres).
+
+Dentro del modelo de caja hay que considerar que una caja tendrá4 lados(Se aplica siguiendo el sentido de ls manecillas
+del reloj):
+1. Arriba(top)
+2. Derecha(right)
+3. Abajo(Bottom)
+4. Izquierda(left)
+*/
+
+h1{width: 400px;
+height: 200px;
+/* Propiedades de tipo shorthand */
+border-width: medium; /* propiedades del borde */  /* thin-->1px; med-->3px; thick-->5px */                   
+border-style: solid;/* propiedades del borde */
+border-color: green;/* propiedades del borde */
+/* Por las reglas de la cascada border-top-color debe ir después de border-color */
+border-top-color: blue;
+/* cuando se desea generalizar las propiedades del borde, o sea, varias propiedades en una sola
+para todos los bordes se puede denotar como en este ejemplo: 
+la propiedad border (el orden es es importante: width style color) */
+border: 2px dashed blue;  
+
+
+}
+/* border-width: 2px 1px;       Esto significa que arriba y abajo se aplicará el ancho de los bordes en 2px
+y a iquierda y derecha se aplicará el ancho de los bordes a 1px        */
+/* En https://cssreference.io están todas las propiedades que necesitamos conocer */
+.caja-uno,
+.caja-dos{
+    background-color: chocolate;
+    border: medium solid orange;
+    padding: 20px;
+    margin:10px;
+
+
+/* 
+Esto aplica para margin y padding
+1 valor= aplica para los cuatro lados.
+2 valores=primer valor aplica para los lados verticales(top/bottom)
+segundo valor aplica para los lados horizontales(left/right)
+3 valores=primer valor aplica para top
+segundo valor aplica para los lados(left/right)
+tercer vaor aplica para bottom.
+4 valores=En el sentido de las manecillas del reloj: 
+primer valor aplica para top(arriba)
+segundo valor aplica para right(derecha)
+tercer valor aplica para bottom(abajo)
+cuarto valor aplica para left(izquierda)
+Ejemplo padding: 20px 40px; Significa que hay 20px de espacio arriba y abajo y 40px a la izquierda y derecha.*/
+margin: 20px 40px;
+padding: 20px 40px;
+padding: 0 40px 20px;
+margin:50px 40px 0;
+padding: 0 40px 20px 50px;
+margin: 100px 50px 30px 0;}
+/* Caja de Línea
+-Ocupan el espacio necesario para mostrar su contenido.
+-No tienen dimensiones modificables(alto,ancho).
+-Permiten otros elementos a su lado.
+-Padding y margin sólo empujan a elementos adyacentes en horizontal, NUNCA EN VERTICAL.
+Caja de Bloque
+-Ocupan todo el ancho disponible,lo que genera saltos de línea.
+-Tienen dimensiones modificcbles(alto,ancho).
+-No permiten otros elementos a su lado(aunque especifique un ancho, siguen ocupando todo el espacio disponible
+ a lo ancho, generando saltos de línea. */
+ .caja-bloque,.caja-linea{
+    background-color: blueviolet;
+    width: 500px;
+    height: 250px;
+    border: medium solid black;
+    padding: 16px;
+    margin: 32px;
+ }
+ .caja-bloque{margin: 32px;
+display: block;
+/* display: inline; */
+}
+ .caja-linea{margin: 48px;
+display: inline;
+/* display: block; */
+}
+
+ /* Propiedad Display
+     inline
+     block
+     inline-block-se comporta como un elemento de l'nea peroacepta modificar sus dimensiones(alto y ancho)
+     none
+     table
+     list-item
+     flex -ver curso de Flexbox CSS
+     grid -ver curso de grid CSS
+     */
+     
+ .display-none,.caja-linea-bloque,.caja-hidden{background-color: darkolivegreen;color: white;
+ width: 600px;
+ height: 300px;
+ border: medium solid black;
+
+ }    
+ .caja-linea-bloque{display: inline-block;}
+ .display-none{
+    display: none;
+ }
+ .caja-hidden{visibility: hidden;}
+ .overflow{background-color: blue;
+width: 200px; 
+height: 100px;
+overflow: visible;/*El desbordamiento visible es por defecto */
+overflow: hidden;/*El desbordamiento oculta no deja ver la parte fuera del ancho y el alto especificados  */
+overflow: scroll; /*El desbordamiento contiene dos barras de desplazamiento: horizontal y vertical*/
+overflow: auto; /*El desbordamiento sólo muestra la barra de desplazamiento necesaria */
+/* overflow-x: scroll;Solamente muestra la barra de desplazamiento por el desbordamiento en el ancho */
+
+ /*overflow-y: scroll;Solamente muestra la barra de desplazamiento por el desbordamiento en el alto */}
+
+/* Tamaño de Caja
+ */
+ .box-sizing-content,.box-sizing-border{width: 500px;
+    padding:10px;margin: 10px;
+border: 5px solid black;}
+ .box-sizing-content{background-color: deepskyblue;
+
+box-sizing: content-box;
+}
+.box-sizing-border{background-color: deepskyblue;
+   
+    box-sizing: border-box;
+    }
+/* Esta es la medida implementada en Internet para el tamaño de caja.
+O sea, la caja se le da el ancho desde el borde. El width contempla la suma del border, el padding, y el contenido. */
+
+/* html{box-sizing: border-box;
+}
+*,*::after,*::before{box-sizing: inherit;} */
+hr{border-width: 2px;}
+.container-col-3{background-color: burlywood;
+margin-top: 20px;
+height: 300px;
+width: 600px;
+}
+.container-col-3>*{width: 200px;
+float: left;
+padding: 10px;
+border: thin solid red;
+box-sizing: border-box;}
+.float-clear{
+    background-color: aqua;
+    height: 300px;
+    width: 600px;
+    
+    border: thin solid black;
+    box-sizing: border-box;
+    
+}
+.float-clear>*{width: 200px;
+border: thin solid black;
+float: left;
+box-sizing: inherit;}
+.float-clear>p{display: inline; margin-top: 0;}
+.container{background-color: cornflowerblue;}
+.float-left{float: left;}
+.float-right{float: right;}
+.clearfix{clear: both;}
+/* Colapso de Márgenes Verticales */
+/* Los márgenes verticales colapsan entre sí, es decir, no son una suma, sino que se superponen. */
+.margin-collapse{background-color: skyblue;}
+.margin-collapse section{border: thin solid black;
+margin-top: 16px;
+margin-bottom: 16px;}
+/* Margenes Horizontales */
+/* Los márgenes horizontales si se suman entre sí */
+.margin-collapse span{display: inline-block;
+margin-right: 16px;
+border: thin solid black;}
+/* Centrado de Caja */
+.sitio-web{
+    border: thin solid black;
+background-color: thistle;
+width: 800px;
+height: 1000px;
+padding: 16px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;}
