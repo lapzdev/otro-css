@@ -93,4 +93,9 @@ font-size: 2em;}
             padding: 1ex; 
             border: 5px solid rgb(142, 34, 120);
         font-size: 2ex;}
+        .ch{
+            background-color: aqua;
+            width: 10ch;
+            
+        }
     
