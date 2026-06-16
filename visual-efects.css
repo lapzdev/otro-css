@@ -1,0 +1,515 @@
+html{
+    background-color: white;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+/* filter: invert(1); */
+}
+.dark-mode{
+    background-color: white;
+    filter: invert(1);
+}
+.dark-mode img{
+    filter: invert(1);
+}
+.dark-mode
+*,*:after,*::before{
+    box-sizing: inherit;
+}
+.box{border: thick solid black;
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+}
+.shadow{
+   
+    /* box-shadow: desplazamiento-x desplazamiento-y desenfoque-radial(radial blur)
+     expansion-desenfoque(spread blur) color [outset/inset]  */
+     box-shadow: 1rem 1rem 1rem 1rem #0005;
+     box-shadow: 1rem 1rem 1rem 1rem ;/*Al no declararse el color toma el color del texto por herencia.*/
+     box-shadow: 1rem 1rem 1rem 1rem inset;/*Al declararse inset la sombra se situa dentro de la caja. 
+     outset es fuera de la caja
+     por defecto pero no se debe declarar porque queda sin efecto.*/
+     box-shadow: -1rem -1rem 1rem 1rem #0005;
+     /* text-shadow: desplazamiento-x desplazamiento-y desenfoque-radial(radial blur) color; 
+     En el text-shadow no se aplica expansión-desenfoque(spread blur).*/
+     text-shadow: 1rem 1rem .25rem rgba(212, 11, 11, 0.511);
+}
+
+.shadow2{
+    box-shadow: 5px 5px 3px 4px #ff000070;
+}
+.shadow3{
+    box-shadow: 5px 5px 3px 4px #ff000070 inset;
+}
+.shadow-multiple{
+    /* box-shadow: desplazamiento-x desplazamiento-y desenfoque-radial(radial blur)
+    expansion-desenfoque(spread blur) color [outset/inset],desplazamiento-x desplazamiento-y desenfoque-radial(radial blur)
+    expansion-desenfoque(spread blur) color [outset/inset]; 
+    se pueden agregar tantas sombras como se quiera, separadas por una coma.
+    Lo mismo cuenta para el text-shadow.*/
+    box-shadow: 1rem 1rem 1rem 1rem #0005,-1rem -1rem 1rem 1rem #0005;
+    text-shadow: 1rem 1rem .25rem rgba(255, 105, 180, 0.523),-1rem -1rem .25rem rgba(148, 12, 226, 0.523),
+    2rem 2rem .25rem rgba(255, 217, 0, 0.571);
+}
+.box1{
+    margin: 20px auto;
+ width: 90%;
+    /* background-image: url(/IMG/img7.jpg); */
+    
+    border: thick solid black;
+    /* filter: drop-shadow(1rem 1rem 3rem rgb(229, 12, 12)); */
+    background-image: linear-gradient(red ,blue,green);
+}
+.box1 img{
+    /* filter: drop-shadow(); */
+    max-width: 100%;
+    height: 100%;
+    filter: drop-shadow(1rem 0rem .25rem hotpink);
+}
+.grid{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    
+    grid-template-rows: 60vw;
+
+}
+.box1 .item:nth-child(2){
+    overflow: hidden;
+}
+.box1 .item:nth-child(2) p{
+    font-family: sans-serif;
+    font-size: clamp(12px, 12px + 1vw, 38px);
+    color: rgb(82, 7, 233);
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.linear-gradient{
+
+    border: thick solid black;
+    background-image: linear-gradient(#ff259050,#60ff60);
+    background-image: linear-gradient(#4c10f150,#ec1616,#9911ff);
+    background-image: linear-gradient(#4c10f150,#ec1616,#9911ff,#c8f11050);
+    background-image: linear-gradient(20deg,#4c10f150,#ec1616,#9911ff,#c8f11050);
+    width: 50%;
+    height: 50vh;
+    margin: 20px auto;
+}
+.linear-gradient2{
+    border: thick solid black;
+   background-image: linear-gradient(90deg,red 33%,blue 34% 66%,white 67%);
+   /* background-image: linear-gradient(to top,red 33%,blue 34% 66%,white 67%); */
+   background-image: linear-gradient(to right,red 33%,blue 34% 66%,white 67%);
+   background-image: linear-gradient(to left,red 33%,blue 34% 66%,white 67%);
+    width: 50%;
+    height: 50vh;
+    margin: 20px auto;
+}
+.linear-gradient3{
+    border: thick solid black;
+   /* background-image: linear-gradient(90deg,red 33%,blue 34% 66%,white 67%); */
+   background-image: linear-gradient(to top,red 33%,blue 34% 66%,white 67%);
+    width: 50%;
+    height: 50vh;
+    margin: 20px auto;
+}
+.linear-gradient4{
+    border: thick solid black;
+   /* background-image: linear-gradient(90deg,red 33%,blue 34% 66%,white 67%); */
+   background-image: linear-gradient(to top,red 33%,blue 34% 66%,white 67%);
+   background-image: linear-gradient(to top right,red 33%,blue 34% 66%,white 67%);
+  
+    width: 50%;
+    height: 50vh;
+    margin: 20px auto;
+}
+.radial-gradient{
+    /* display: inline; */
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(circle 100px,red 30%,blue 60%,yellow 90%);   
+    /* background-image: radial-gradient(circle 100px at top,red 30%,blue 60%,yellow 90%); 
+    background-image: radial-gradient(circle 100px at top left,red 30%,blue 60%,yellow 90%);  */ 
+    margin: 20px auto;
+
+}
+.radial-gradient1{
+    /* display: inline; */
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    /* background-image: radial-gradient(circle 100px,red 30%,blue 60%,yellow 90%);    */
+    background-image: radial-gradient(circle 100px at top,red 30%,blue 60%,yellow 90%); 
+    /* background-image: radial-gradient(circle 100px at top left,red 30%,blue 60%,yellow 90%);  */
+    margin: 20px auto;
+}
+.radial-gradient2{
+    /* display: inline; */
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    /* background-image: radial-gradient(circle 100px,red 30%,blue 60%,yellow 90%);    */
+    /* background-image: radial-gradient(circle 100px at top,red 30%,blue 60%,yellow 90%);  */
+    background-image: radial-gradient(circle 100px at top left,red 30%,blue 60%,yellow 90%); 
+    margin: 20px auto;
+}
+.radial-gradient2-ellipse{
+    /* display: inline; */
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    /* background-image: radial-gradient(circle 100px,red 30%,blue 60%,yellow 90%);    */
+    /* background-image: radial-gradient(circle 100px at top,red 30%,blue 60%,yellow 90%);  */
+    background-image: radial-gradient(ellipse 100px 50px,red 30%,blue 60%,yellow 90%); 
+    margin: 20px auto;
+}
+.radial-gradient2-ellipse-vert{
+    /* display: inline; */
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    /* background-image: radial-gradient(circle 100px,red 30%,blue 60%,yellow 90%);    */
+    /* background-image: radial-gradient(circle 100px at top,red 30%,blue 60%,yellow 90%);  */
+    background-image: radial-gradient(ellipse 100px 50px,red 30%,blue 60%,yellow 90%); 
+    margin: 20px auto;
+}
+.conic-gradient{
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-image: conic-gradient(red,blue,green);
+
+}
+.conic-gradient1{
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-image: conic-gradient(red 0% 30%,blue 30% 60%,green 60% 0%);
+
+}
+.conic-gradient2{
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-image: conic-gradient(red 0deg 120deg,blue 120deg 240deg,green 240deg 360deg);
+
+}
+.conic-gradient3{
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-image: conic-gradient(red 0deg 120deg,blue  240deg,green  360deg);
+
+}
+.conic-gradient4{
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-image: conic-gradient(from 90deg,rgb(166, 236, 15) 0% 40%,rgb(255, 0, 0) 80% ,green  150%);
+
+}
+.conic-gradient4>p{
+    text-shadow: 1rem 1rem .15rem;
+}
+.conic-gradient5{
+    margin-bottom: 10px;
+    border: thick solid black;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    background-image: conic-gradient(
+        from 90deg,red 25%,blue 25% 63%,white 63% 85%);
+        background-image: conic-gradient(
+            from 90deg,red 0deg 120deg,blue 120deg 240deg,white 240deg);
+
+}
+.repeat-gradient-lineal{
+    background-image: repeating-linear-gradient(red 0 10px,green 10px 20px, blue 20px 30px);
+}
+.repeat-gradient-radial{
+    background-image: repeating-radial-gradient(circle 64px,red 0 10px,magenta 10px 20px,yellow 20px 30px);
+}
+.repeat-gradient-conic{
+    background-image: repeating-conic-gradient(
+        black 0% 8%,red 8% 16%,yellow 16% 24%
+    );
+}
+.grafico-pastel{
+    background-image: conic-gradient(red 0deg 120deg, green 120deg 240deg, blue 240deg);
+    border-radius: 50%;
+}
+.grafico-dona{
+    background-image:radial-gradient(white 0% 30%,black 31% 33%,transparent 34%), conic-gradient(red 0deg 120deg, green 120deg 240deg, blue 240deg);
+    border-radius: 50%;
+}
+.radial-prueba{
+    background-image: radial-gradient(circle 60px at top,red 30% ,blue 30% 60%, green 60%);
+    background-image: radial-gradient(white 30% ,black 31% 33%,transparent 34% ),conic-gradient(
+        blue 120deg,red 120deg 240deg,green 240deg
+    );
+    border-radius: 50%;
+}
+.card{border: thick solid black;
+    margin-top: 20px;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;}
+    .card img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 0 50%;
+        filter: blur(.25rem);
+        filter: blur(.15rem);
+        filter: brightness(1);/* Los valores de brightness van del 1 al 0
+         siendo uno el brillo normal de la imagen y 0 la imagen oscura.*/
+         filter: brightness(0);
+         filter: brightness(0.5);
+         filter: brightness(1.5); /*En este caso el brillo aumenta por encima de la escala normal*/
+         filter: contrast(0);/* El contraste va de 0 a 1 (en 0 la imagen se ve totalmente en gris)*/
+         filter: contrast(1);/*El contraste mantiene sus valores máximos*/
+         filter: contrast(1.5);/*No pasa nada con un contraste superior a 1*/
+         filter: contrast(.25);
+         filter: grayscale(0);/*La escala de grises va de 0 a 1 
+         siendo 0 los valores normales y 0 escala de gris total*/
+         filter: grayscale(.5);
+         filter: grayscale(1);
+         filter: sepia(0);/*El filtro sepia es la escala de amarillo siendo cero
+         la no aplicación y el 1 la aplicación total*/
+         filter: sepia(.5);
+         filter: sepia(1);
+         filter: hue-rotate(30deg);/*Es la escala rotatoria de colores que se da en grados(deg)*/
+         filter: hue-rotate(60deg);
+         filter: hue-rotate(240deg);
+         filter: invert(0);/*Invierte los colores losvalores van de 0 a 1*/
+         filter: invert(1);
+         filter: saturate(.25); 
+         /* Satura los colores. Superior a 1 los colores se sobrsaturan */
+         
+    }
+    /* .imagen img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 50%;    
+    } */
+.filters-multiple{
+    filter: blur(.15rem) brightness(.30)  saturate(.35) invert(1);
+}
+.bg-fixed{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.405),rgba(255, 0, 0, 0.186)),url(/IMG/img7.jpg);
+    background-attachment: fixed;
+    
+}
+.cardnew{
+   
+    border: thick solid black;
+    margin-top: 20px;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+}
+.cardnew img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+/* .backdrop-filter img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+
+}
+.backdrop-filter h2{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    margin-top: 0;
+    background-color: rgba(212, 11, 11, 0.511);
+    color: white;
+    width: 100%;
+    height: 100%;
+} */
+ .relative{
+    position: relative;
+
+ }
+ .absolute{
+    position: absolute;
+    top: 0;
+    left: 0;
+ }
+ .backdrop-filter{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+   
+ }
+ .backdrop-filter h4{
+    backdrop-filter:grayscale(1) ;
+    padding: 2rem;
+    background-color: rgba(255, 102, 255,.5);
+    /* backdrop-filter: grayscale(1); */
+    
+    
+   
+ }
+ /* el mix-blend-mode(modo de mezcla no se aplica sobre el contenedor sino sobre las imágenes,
+ siendo normal equivalente a que no se va a efectuar ninguna mezcla) */
+ .blend-mode img{
+    mix-blend-mode: normal;
+    /* mix-blend-mode: exclusion; */
+    /* mix-blend-mode: saturation; */
+    mix-blend-mode: darken;   
+ }
+ .tarjeta{
+    position: relative;
+    border: thick solid black;
+    margin-top: 20px;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;  
+    filter: blur(.09rem) brightness(1.5);
+ }
+ .tarjeta img:not(.cubierta){
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0px;
+ }
+ .tarjeta img{
+    mix-blend-mode: darken;
+ }
+ a[href="index.html#temario-css"]{
+    top: 25%;
+ }
+ .cubierta{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    left: 25%;
+ }
+ .tarjeta2{
+    position: relative;
+    border: thick solid black;
+    margin-top: 20px;
+    width: 600px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;  
+    /* filter: blur(.09rem) brightness(1.5); */
+ }
+.tarjeta2 img:not(.nofiltro){
+    filter: blur(.1rem) brightness(1.5);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.tarjeta2 img{
+
+    mix-blend-mode: darken;
+}
+ .bg-blend-mode{
+    background-image: url("IMG/puesta de sol2.png"),url("IMG/LOGO MUTHU modificado.png");
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-blend-mode: hard-light;
+    background-blend-mode: color-burn;
+    background-blend-mode: multiply;
+    /* background-size: cover; */
+    background-position: center;
+    filter: blur(.09rem);
+ }
+ /* El clip-path crea máscaras de una imagen, esto es, recorta según la configuración dejando el área restante en blanco,
+ pudiendo combinarse con otra u otras imágenes que estén más al fondo. */
+ .clip-path{
+    /* clip-path: circle(100px);
+    clip-path: circle(100px at bottom);
+    clip-path: circle(100px at left bottom);
+    clip-path: circle(100px at 0 0);
+    clip-path: circle(100px at 25% 25%);
+    clip-path: circle(100px at 50% 50%);
+    clip-path: circle(100px at 25px 25px);
+    clip-path: ellipse(100px 50px at 25% 25%);
+    clip-path: ellipse(100px 50px at 50% 50%);
+    clip-path: ellipse(100px 50px at top right);
+    clip-path: ellipse(100px 50px at bottom);
+    clip-path: ellipse(100px 50px at bottom left);
+    clip-path: ellipse(100px 50px at bottom right);
+    clip-path: ellipse(100px 50px at 50px 100px);
+    clip-path: inset( 2rem); */
+    clip-path: inset( 2rem  round 3rem); /*recorta el rectángulo con una máscara de 2rem y redondea las cuatro esquinas 3rem.*/
+    clip-path: inset( 2rem  round 2rem 3rem);/*recorta el rectángulo con una máscara de 2rem y redondea las esquinas de
+    la diagonal esquina superior izquierda-esquina inferior derecha a 2rem, mientras que las esquinas de la 
+     diagonal esquina superior derecha-esquina inferior izquierda las redondea a 3rem.*/
+
+    clip-path: inset( 2rem  round 1rem 2rem 3rem);/*recorta el rectángulo con una máscara de 2rem, redondeando la esquina
+    superior izquierda a 1rem, las esquinas de la diagonal esquina superior derecha-esquina inferior izquierda a 2rem,
+    y esquina inferior derecha a 3rem.*/
+    clip-path: inset(2rem round 1rem 2rem 3rem 4rem);/*en esta caso se establece la máscara a 2rem,
+    empezando el redondeo por la esquina superior izquierda a 1rem, la esquina superior derecha 2rem,
+    la esquina inferior derecha a 3rem, y la esquina inferior izquierda a 4rem(en el sentido de las manecillas del reloj).*/
+clip-path: polygon(0 0,100% 0,50% 100%);
+ }
+ .shapes{
+    border: 3px solid black;
+    margin: 0 auto 5px;
+    padding: 1rem;
+    max-width: 800px;
+ }
+ .shapes img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 0 50% ;
+ }
+ .float-left{
+    float: left;
+ }
+ .float-right{
+    float: right;
+ }
+ .shape1{
+    margin: 2rem 2rem;
+    shape-outside: circle();
+ }
+ 
+ 

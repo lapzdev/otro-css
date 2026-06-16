@@ -1,0 +1,287 @@
+/* Pra las fuentes de estilos y textos me voy a a poyar mucho en la página
+cssreference.io */
+/* 
+font-family
+font-size
+font-weight
+font-style
+font-variant
+font */
+.font {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
+    /*Es la familia tipográfica*/
+    font-family: monospace;
+    font-size: 32px;
+    /*Tamaño de fuente*/
+    font-weight: bold;
+    /*Peso de la fuente(ligera,negrita,etc)*/
+    font-style: italic;
+    /*Estilo de la fuente*/
+    font-variant: small-caps;
+    /*Variante de la fuente: en este caso son mayúsculas todas*/
+    line-height: 2;
+    /*Alto de la línea(por defecto es 1 que es el interlineado normal)*/
+    font: italic small-caps bold 24px / 1.5 monospace;
+    /*Font es un shorthand de las anteriores propiedades. Ojo: 
+    entre font-size y line-height hay que poner una diagonal para que funcione.*/
+}
+
+/*
+Formato woff o woff2- Web Open Font Format(Formato de Fuente Abierta Web). es la extensión que deben tener los formatos tipográficos externos que 
+se quieran añadir al proyecto.*/
+@font-face {
+    /*@font-face es una función para importar desde una dirección url determinada un formato de fuente determinado.
+    dicho archivo, generalemente de extensión .woff ó .woff2, se puede arrastrar hasta el proyecto, colocarlo en una carpeta
+    (generalmente ASSETS),y configurar el camino hasta ella como se detalla abajo.*/
+    font-family: "Chalet";
+    src: url("ASSETS/Chalet.woff") format("woff");
+    /*src:url("ASSETS/Chalet.woff") format("woff"),
+    ("ASSETS/Chalet.woff2") format("woff2")*/
+}
+
+/*Esta es una dirección a aun archivo de formato ficticia para ponerlo como ejemplo.*/
+.chalet {
+    font-family: "Chalet", monospace, sans-serif;
+    /*Esto significaría que si no se encuentra Chalet,
+    se carga monospace, y si no sans-serif*/
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    font-variant: small-caps;
+    line-height: 1.5;
+}
+
+.roman {
+    font-family: 'Times New Roman';
+    /*Esto es un ejemplo de cómo se pueden modifiar las font-family, o familia de fuentes. 
+    En primer lugar va la fuente desea, separada 
+    por una como de la fuente que se tedrá en caso de que la primera no se halle. Esto es completamente modificable.*/
+}
+
+/* font-display es una propiedad de CSS que nos va a decir como es que queremos cargar una fuente personalizada.
+ font-display: 
+ auto-permite que el navegador utilice el método predeterminado que puede ser block.
+ block-oculta brevemente el texto hasta que la fuente haya sido descargada por completo.
+ swap-indica al navegador que utilice la fuente alternativa para mostrar el texto.
+ fallback-es una mezcla de auto y swap.
+ optional-ocultará el texto,luego lo cargará con la fuente alternativa y finalmente aplicará lafuente personalizada. 
+
+  */
+@font-face {
+    font-family: "Chalet";
+    src: url("ASSETS/Chalet.woff") format("woff");
+    font-display: swap;
+    /*Este es el valor prefrerido para la propiedad.*/
+
+}
+
+.raleway {
+    font-family: Raleway;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/*Google Fonts: Sitio de Google para las tipografías que se usan. Su dirección es fonts.google.com*/
+/* text-align
+text-indent
+text-overflow
+text-transform
+letter-spacing 
+*/
+/* overflow:hidden
+white-space:nowrap son dos propiedades que junto con text-overflow:ellipsis
+posibilitan que el texto de una caja no se desborde de esta y 
+pueda ser representado con puntos suspensivos(...) */
+.text {
+
+    font-size: 2rem;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 3rem;
+    /*Es la sangría de un texto*/
+    letter-spacing: 1rem;/*hace el espaciado por cada caracter*/
+    /*es el espaciado entre letras*/
+    word-break: break-all;/*Rompe la palabra cuando es necesario para que quepa el texto.*/
+    word-break: keep-all;/*Mantiene la palabra entera*/
+    word-spacing:2rem ;/*Hace el espaciado entre palabras*/
+    writing-mode: horizontal-tb;/*Te da la orientación del texto(Horizontal,
+    vertical)*/
+    
+
+}
+
+.text-overflow {
+    background-color: blanchedalmond;
+    border: thin solid black;
+    padding: 1rem;
+    width: 50%;
+    overflow: hidden;
+    /*Oculta la parte desbordada del contenido*/
+    white-space: nowrap;
+    text-overflow: clip;
+    /*Oculta  el texto */
+   
+    /*Oculta el texto y en su lugar añade puntos suspensivos. En la medida que el viewport se agrande o
+se achique, va apareciendo u ocultándose texto.*/
+text-overflow: ellipsis;
+}
+
+.text-transform-capitalize {
+    background-color: blanchedalmond;
+    border: thin solid black;
+    padding: 1rem;
+    width: 50%;
+    text-transform: capitalize;
+    /*Pone la mayúscula al principio de cada palabra del texto.*/
+    text-transform: uppercase;/*Pone todo el texto en mayúscula*/
+    text-transform: lowercase;/*Pone todo el texto en minúscula*/
+}
+
+.text-transform-uppercase {
+    background-color: blanchedalmond;
+    border: thin solid black;
+    padding: 1rem;
+    width: 50%;
+    text-transform: uppercase;
+    /*Pone todo el texto en mayúscula.*/
+}
+
+.text-transform-lowercase {
+    background-color: blanchedalmond;
+    border: thin solid black;
+    padding: 1rem;
+    width: 50%;
+    text-transform: lowercase;
+    /*Pone todo el texto en minúscula.*/
+}
+
+.white-space-normal {
+
+    width: 25%;
+    background-color: aqua;
+    border: thin solid black;
+
+    text-decoration: none;
+
+    white-space: normal;
+}
+
+.white-space-nowrap {
+
+    width: 25%;
+    background-color: aqua;
+    border: thin solid black;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.white-space-pre {
+
+    width: 25%;
+    background-color: aqua;
+    border: thin solid black;
+
+    text-decoration: none;
+
+    white-space: pre;
+}
+
+.white-space-pre-wrap {
+
+    width: 25%;
+    background-color: aqua;
+    border: thin solid black;
+
+    text-decoration: none;
+
+    white-space: pre-wrap;
+}
+
+.white-space-pre-line {
+    width: 25%;
+    background-color: aqua;
+    border: thin solid black;
+
+
+    text-decoration: none;
+
+    white-space: pre-line;
+}
+
+.parrafo {
+    display: flex;
+    align-items: start;
+}
+
+.etiqueta {
+    background-color: yellow;
+    text-align: justify;
+    border: thin solid black;
+    width: 700px;
+    margin-left: 5px;
+}
+
+.parrafo-columna {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+            letter-spacing 
+            white-space
+            word-break
+            word-spacing
+            writing-mode*/
+
+           
+/* Iconos */
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+  span.size-20 {
+    font-size: 20px;
+    font-variation-settings: 'OPSZ' 20;
+  }
+  span.size-24 {
+    font-size: 24px;
+    font-variation-settings: 'OPSZ' 24;
+  }
+  span.size-40 {
+    font-size: 40px;
+    font-variation-settings: 'OPSZ' 40;
+  }
+  span.size-48 {
+    font-size: 48px;
+    font-variation-settings: 'OPSZ' 48;
+  }
+  
+  /* Rules for using icons as black on a light background. */
+  .dark {
+    background: black;
+    color: rgba(255, 255, 255, 1);
+    font-variation-settings: 'GRAD' -25;
+  }
+  .dark-inactive {
+    background: black;
+    color: rgba(255, 255, 255, 0.3);
+    font-variation-settings: 'GRAD' -25;
+  }
+  i{font-size: 38px;}

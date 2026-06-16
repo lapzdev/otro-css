@@ -1,0 +1,68 @@
+/*El selector(La pseudoclase :root) hace referencia a la etiqueta html, pero con un nivel de especificidad mayor(0,1,0)
+En esta pseudoclase que representa raíz del documento html se pueden declarar las variables de forma global 
+para todo el documento html*/
+:root{
+    color: rgb(183, 18, 18);
+    --background-color-blue:blue;
+    --background-color-red:red;
+    --default-background-color:rgba(156, 156, 241, 0.5);
+    --font-size-32:32px;
+    --font-size-16:16px; /*Estas variables de ejemplo tendrán un ámbito global para todo el documento html.*/
+}
+html{
+    color: red;
+    box-sizing: border-box;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+}
+
+/* Las Custom Properties(Variables CSS), se definen dentro de un selector(clase o elemento) */
+.custom-props-1{
+    --primary-color:gray;/*Esta es la variable. Los elementos hijos pueden heredar las variables de los elementos padres.  */
+    --font-size:32px;
+    background-color: var(--primary-color );
+    
+}
+.custom-props-2{
+    border: 5px solid var(--border-color);
+}
+.custom-props-3{
+    font-size: var(--font-size);
+    /* La variable --border-color se definió en un estilo en línea dentro
+    del elemento que define a la clase .custom-props-2, que tambien contiene al elemento que define a este selector
+    (clase .custom-props-3)*/
+    border: 5px solid var(--border-color);
+}
+
+.title-props{
+    background-color: var(--primary-color); /*Como el elemento donde está definida la clase title-props 
+    no es descendiente del elemento donde está definida la clase .custom-props-1
+    no se producirán cambios por utilizar la variable --primary-color .*/
+    --primary-color:blue; /*Aunque tenga el mismo nombre, esta es una variable exclusiva  del ámbito de la
+    clase .title-props */
+    /* font-size: var(--font-size-32); */
+}
+.ch-10{
+    --padding-size:2ch;
+    --num-ch:10ch;
+    background-color: var(--default-background-color);
+    
+    font-size: 2rem;
+    padding: var(--padding-size);
+    width: calc(var(--num-ch) + var(--padding-size)*2);/*Tambien se puede calcular en valores reales 
+    Ej: width:calc(10ch + 2ch*2) Ojo.:Se debe dejar espacio entre el operador y el operando.*/
+    /* width: 10ch;
+    padding: 2ch;
+    background-color: var(--default-background-color); */
+}
+.min-max{
+    background-color: var(--default-background-color);
+    margin-top: 1rem;
+    width: min(300px,20vw,20rem); /*Toma siempre el menor valor para el ancho(width)*/
+    height: max(200px,25vh);/*Toma siempre el mayor valor para la altura(height)*/
+}
+h1{
+    font-size: clamp(2rem,1rem + 3vw,3rem);/*La funcion clamp(menor-valor,valor-ideal,máximo-valor). 
+    Tambien se pueden incluir fórmulas de cálculo como en el ejemplo.*/
+}

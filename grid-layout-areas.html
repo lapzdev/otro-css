@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout por Áreas</title>
+    <style>
+        
+        html {
+box-sizing: border-box;
+font-size: 16px;
+font-family: sans-serif;
+
+}
+
+*,
+*::after,
+*::before {
+box-sizing: inherit;
+}
+body{
+        margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(5,auto);
+   grid-template-areas: 
+   "header   header   header     header    header"
+   "nav      nav      nav        nav       nav"
+   "aside    seccion1 seccion1   seccion2  seccion2"
+   "aside    seccion3 seccion3   seccion4  seccion4"
+   "footer   footer   footer     footer    footer";
+   
+    min-height: 100vh;
+    text-align: center;
+    }
+    body>*{background-color: gray;
+    border: thick solid black;}
+    h2{text-align: center;
+    font-size: clamp(12px,12px + 1vw,32px);
+}
+    .header{
+        background-color: blue;
+    grid-area: header;   
+       
+    }
+  
+    .nav{
+        background-color: blueviolet;
+    grid-area: nav;  
+    }
+    .aside{
+        background-color: aqua;
+        grid-area:aside; 
+    }
+    .seccion1{
+        background-color: chocolate;
+        grid-area:seccion1; 
+    }
+    .seccion2{
+        background-color:burlywood;
+     grid-area: seccion2;  
+    }
+    .seccion3{
+        background-color:red;
+        grid-area:seccion3;   
+    }
+    .seccion4{
+        background-color:blanchedalmond;
+     grid-area: seccion4;  
+    }
+    .footer{
+        background-color:chartreuse;
+      grid-area: footer;  
+       
+    }
+    @media (min-width:100px) and (max-width:700px){
+        .header{
+       
+      
+       
+    }
+  
+    .nav{
+       
+      
+    }
+    .aside{
+       
+     
+    }
+    .seccion1{
+       
+       
+    }
+    .seccion2{
+       
+    }
+    .seccion3{
+        
+    }
+    .seccion4{
+        
+    }
+    .footer{
+       
+    }
+    @media screen and (min-width:1024px) {/*Esta se utiliza para hacer cambios en la pantalla de la pc, no en el móvil
+        la palabra screen define para donde va orientada que es la pantalla de la pc.*/
+        
+    }
+
+    }
+</style>
+<title>Grid Layout Areas</title>
+</head>
+<body>
+<header class="header">
+<h2>
+Header
+</h2>
+</header>   
+<nav class="nav">
+<h2>Navegador</h2>
+</nav>
+<aside class="aside">
+<h2>Lateral izquierdo</h2>
+
+</aside>
+<section class="seccion1">
+<h2>Cuerpo principal</h2>
+</section>
+<section class="seccion2">
+<h2> Cuerpo secundario</h2>
+</section>
+<section class="seccion3">
+<h2> Cuerpo terciario</h2>
+</section>
+<section class="seccion4">
+<h2> Cuerpo cuaternario</h2>
+</section>
+<footer class="footer">
+<h2>Pie</h2>
+</footer>
+</body>
+</html>

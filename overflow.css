@@ -1,0 +1,38 @@
+p:not(.otro) {
+    width: 200px;
+    border: 1px solid;
+    padding: 2px 5px;
+  
+    /* BOTH of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .overflow-visible {
+    white-space: initial;
+    
+  }
+  
+  .overflow-clip {
+    text-overflow: clip;
+  }
+  
+  .overflow-ellipsis {
+    text-overflow: ellipsis;
+  }
+  
+  .overflow-string {
+    /* Not supported in most browsers,
+       see the 'Browser compatibility' section below */
+    text-overflow: " [..]";
+  }
+  p.otro{
+    overflow: hidden;
+    width: 200px;
+    height: 150px;
+    border: 1px solid;
+    padding: 2px 2px; 
+    white-space: pre;
+    text-overflow:ellipsis;
+  }
+  

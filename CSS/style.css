@@ -47,7 +47,7 @@ del elemento seleccionado y no aplican al elemento seleccionados.
 .hermanos-general~li{background-color: thistle;}
 /* También puede aplicar a etiquetas como por ejemplo:  */
 li~li{background-color: thistle;} /*no es recomendable porque puede aplicar a todas las etiquetas li por
-debajo delelemento seleccionado*/
+debajo del elemento seleccionado*/
 li+li{background-color: thistle;}/*aplica solo a la etiqueta al mismo nivel y exactamente debajo del elemento
 seleccionado.*/
 /* Los selectores de hermanos adyacentes van a aplicar a los elementos que están al mismo nivel(en este caso li)
@@ -126,8 +126,13 @@ en este caso el id temario-css que está al inicio de la página. */
 .lista-pseudoclase li:nth-child(3){
     color: blueviolet;
 }
-/* Pseudoclases posicionales: aplica estilos al número denotado del elemento li
-y se aplicará a cada li espaciado por el número al lado de n */
+/* Pseudoclases posicionales: aplica estilos en base al valor del múltiplo en este caso de 3*n,
+siendo n la posición de cada repetición de la ocurrencia(ej: 3*1=3 por lo que el tercer
+lugar de la lista toma los atributos declarados,3*2=6 por lo que el sexto lugar de la fila
+toma los atributos declarados, 3*3=9 por lo que el noveno lugar de la fila toma los atributos declarados, y así.
+Nota: Se empieza a iterar n desde cero. Ej: 3*0=0, osea, no tiene elemento que representar, pero 3n+1=3*0+1=1 y
+así el primer elemento de la lista toma los atributos declarados en el bloque de definiciones del estilo CSS
+declarado.) */
 .lista-pseudoclase li:nth-child(3n){
     background-color: cadetblue;
 }

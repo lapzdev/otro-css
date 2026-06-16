@@ -1,0 +1,43 @@
+.color-by-name{
+    background-color: #ff000050; /* Opacidad: 00 totalmente transparente
+    99 color total*/
+    color: rebeccapurple;
+    border: thick solid black ;
+}
+.color-rgb{
+    background-color: rgb(255,0,0,.30);/* Opacidad: 0 totalmente transparente
+    1 es 100% o opacidad total(sin transparencia)   0.3 es el 30%  de opacidad*/
+    color: rebeccapurple;
+    border: thick solid black ;
+}
+.color-hsl{
+    /* hsla: circulo cromático  saturación del color luminosidad opacidad 
+     circulo cromático: 0 a 360  da la escala de colores
+     saturación(intensidad del color):
+     0% escala de grises
+     100%  color puro.
+     Luminosidad del color: 
+     0% color negro
+     50% es el color puro
+     100% color blanco;
+     alfa: opacidad: 
+     0 transparencia total
+     1 opacidad total
+     .5 50% opacidad
+     */
+     /* Ejercicio para probar las diferentes variantes del hsl */
+    background-color: hsla(120, 100%, 50%,1);
+    background-color: hsla(240, 100%, 50%,1);
+    background-color: hsla(360, 100%, 50%,1);
+    background-color: hsla(120, 50%, 50%,1);
+    background-color: hsla(240, 50%, 50%,1);
+    background-color: hsla(360, 50%, 50%,1);
+    background-color: hsla(120, 50%, 30%,1);
+    background-color: hsla(240, 50%, 30%,1);
+    background-color: hsla(360, 50%, 30%,1);
+    background-color: hsla(120, 50%, 50%,.5);
+    background-color: hsla(240, 50%, 50%,.5);
+    background-color: hsla(360, 50%, 50%,.5);
+    color: rebeccapurple;
+    border: thick solid black ;  
+}
