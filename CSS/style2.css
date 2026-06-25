@@ -1,0 +1,154 @@
+/* ESTE ES PARA EL NUEVO CURSO DE CSS, CONVOYADO CON GITHUB Y CSS */
+/* Una Regla CSS consta de dos partes 
+1) El selector.
+2) Bloque de declaraciones. 
+Dentro del bloque de declaraciones: 
+atributo:valor;
+si el atributo estuviera formado por dos o más palabras
+sería así ej.: atributo-de-dos-o-mas-palabras: otro-valor;
+La forma típica sería: 
+selector{atributo: valor;
+otro-atributo: otro-valor;
+...
+n-atributo: n-valor;}*/
+/* @import url() es mala practica porque son bloqueantes cuando el navegador lee esta instrucción */
+
+/* Links de referencia y documentación
+ https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada
+  https://www.w3.org/html/logo/
+  https://www.w3.org/standars/webdesign/htmlcss.html
+  https://www.w3.org/TR/css-2020/
+  https://developer.mozilla.org/es/docs/Web/CSS
+  https://cssreference.io
+  https://caniuse.com/
+  https://codeguide.co/ */
+@import url("otra-hoja.css");
+html {
+  scroll-behavior: smooth;
+}
+h1 {
+  color: orangered;
+  background-color: aqua;
+}
+/* Selectores Básicos
+1)Etiquetas --> Son elementos HTML
+2)Identificadores --> Atributo id se identifica por #
+3)Clases --> Atributo class se identifica por el punto (.)*/
+a {
+  text-decoration: none;
+}
+p {
+  color: midnightblue;
+}
+/* Dar estilos con id se considera un Antipatrón, o sea, una mala práctica, ya que el id es una clave única y no se puede repetir, por tanto ese selector sólo se puede utilizar para un sólo elemento. */
+#parrafo-dos {
+  background-color: rgba(15, 197, 197, 0.557);
+  color: rgb(232, 14, 14);
+}
+/* Dar estilos con clases nos permite reutilizar nuestro código */
+.otro-color {
+  background-color: blue;
+}
+
+#texto-20 {
+  font-size: 35px;
+}
+#bg-steelblue {
+  background-color: steelblue;
+}
+#color-white {
+  color: white;
+}
+.otro-texto {
+  background-color: blue;
+}
+/* Solamente aplica a los elementos en el primer nivel */
+.hijos-directos > li {
+  background-color: thistle;
+}
+/* Aplica a todos los elementos descendientes */
+.hijos-descendientes b {
+  background-color: thistle;
+}
+/* Solamente aplica a los elementos que estén al mismo nivel(en este caso li)
+y que estén por debajo del elemento de referencia(todos ellos), sin incluirlo. */
+.hermanos-general ~ li {
+  background-color: thistle;
+}
+/* Solamente aplica a los elementos que estén al mismo nivel(en este caso li)
+y que estén inmediatamente por debajo del elemento de referencia(uno sólo), sin incluirlo. */
+.hermanos-adyacentes + li {
+  background-color: thistle;
+}
+.selectores-atributo a[href] {
+  font-weight: bold;
+  color: orangered;
+}
+.selectores-atributo li > a[target="_blank"] {
+  background-color: aquamarine;
+}
+/* El comodín(*) aplica el estilo al elemento si este contiene en el atributo referenciado la palabra en cuestión(en este caso es "jonmircha") */
+.selectores-atributo a[href*="jonmircha"] {
+  font-size: 24px;
+}
+/* El comodín(^) aplica el estilo al elemento si este  tiene el texto en cuestión al inicio */
+.selectores-atributo a[href^="#in"] {
+  color: brown;
+  background-color: rgb(226, 130, 13);
+  font-size: 16px;
+}
+/* El comodín($) aplica el estilo al elemento si este  tiene el texto en cuestión al final */
+.selectores-atributo a[href$="teca"] {
+  color: brown;
+  background-color: rgb(226, 132, 16);
+  font-size: 16px;
+}
+/* El comodín(~) aplica el estilo al elemento si este  tiene el texto en cuestión en una lista separada por espacios en blanco */
+.selectores-atributo [class~="cursos"] {
+  font-style: italic;
+  background-color: rgb(16, 226, 135);
+  font-size: 30px;
+}
+/* El comodín(|) aplica el estilo al elemento si este  tiene el texto en cuestión en una lista separada por un espacio en blanco (al principio de la declaración del atributo) Ej. href="otros-nuevo undr"--> .elemento li[href|="otros"] y que después del texto en cuestión venga un guión medio(-) */
+.selectores-atributo [class|="menu"] {
+  font-style: italic;
+}
+.sel-atributo a[class^="men"] {
+  font-style: italic;
+  font-size: 24px;
+}
+.sel-atributo a[href$="org"] {
+  font-weight: bold;
+}
+/* Prueba de selectores */
+.prueba>ul{
+  background-color: aqua;
+}
+.prueba li{
+  color: blue;
+}
+.prueba li[class*="nav"]{
+  font-size: 24px;
+
+}
+.prueba li[class^="inter"]{
+  color: red;
+}
+.prueba li[class$="ers"]{
+  font-style: italic;
+}
+.prueba li[class~="otros"]{
+  font-style: italic;
+}
+.prueba li[class|="pasajes"]{
+ font-size: 34px;
+}
+
+
+/* Selector universal
+El selector universal (*) aplica los estilos a todos los elementos html presentes en el documento. */
+
+  /* Todos los elementos del documento html adquieren la definición de este estilo */
+  /* En el caso de que esten contenidos dentro de la clase de un elemento Ej .class *{ definición:valor;} El valor se aplica a todos los elemento contenidos dentro de esta clase       */
+  *{font-weight: bolder;}
+  .prueba *{font-family: sans-serif;}

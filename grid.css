@@ -70,7 +70,7 @@ html {
     display: grid;
     /* grid de 3 columnas x 4 filas */
    /*fr es una fracción del resto del espacio sin maquetar. grid-template-columns: 50% 100px 1fr 1fr ;
-    En este caso eseespacio se dividiría por igual entre dos columnas con una fracción cada una (1fr)*/
+    En este caso ese espacio se dividiría por igual entre dos columnas con una fracción cada una (1fr)*/
     /* grid-template-rows: 2rem 20vh 30%; */
     /*Aquí se va usar la función repeat(cant. de filas o columnas,ancho o alto de la columna o fila respectivamente)*/
     /* grid-template-columns: repeat(5,20%); */

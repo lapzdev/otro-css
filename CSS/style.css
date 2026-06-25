@@ -5,104 +5,177 @@ sintaxis:
 selector{
 atributo:valor;
 atributo-de-mas-de-dos-palabras:otro-valor;} */
-h1{color: orangered; background-color: skyblue;}
-#c100{color:blue;font-size: small;font-family: sans-serif;}
-.fuego{color: red; font-size: large;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-font-style: italic;}
+/* Selectores básicos */
+h1 {
+  color: orangered;
+  background-color: skyblue;
+}
+#c100 {
+  color: blue;
+  font-size: small;
+  font-family: sans-serif;
+}
+.fuego {
+  color: red;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: italic;
+}
 /* Esta es una forma no recomenda de establecer un enlace entre dospáginas de estilo  html */
 /* @import url("otroestilo.css"); */
 /* Selectores Básicos
 1) Etiquetas- Son elementos HTML
 2) Identificadores- Atributo id- #
 3) Clases- Atributo class- . */
-p{color: midnightblue;}
+p {
+  color: midnightblue;
+}
 /* Dar estilos con identificadores(id) se considera un AntiPatrón, o sea, una mala práctica, pues 
  cada elemento, en este caso un párrafo, tiene un id único para ese párrafo */
-#parrafo-dos{background-color: skyblue;}
+#parrafo-dos {
+  background-color: skyblue;
+}
 /* Dar estilos con clases nos permite reutilizar nuestro código CSS */
-.text-20{font-size: 20px;}
+.text-20 {
+  font-size: 20px;
+}
 
-.text-32{ font-size: 32px;}
+.text-32 {
+  font-size: 32px;
+}
 
-.bg-skyblue{background-color: skyblue;}
+.bg-skyblue {
+  background-color: skyblue;
+}
 
-.bg-steelblue{background-color: steelblue;}
-.text-white{color: white;}
-.blanco{color: white;}
+.bg-steelblue {
+  background-color: steelblue;
+}
+.text-white {
+  color: white;
+}
+.blanco {
+  color: white;
+}
+/* Selectores avanzados */
 /* Los hijos directos son aquellos elementos inmediatos al elemento al que se le pone la clase
 en este caso ul>li(su hijo directo es li y su relación con el estilo se denota por el pico paréntesis(>)y
 el elemento hijo directo(en este caso li)) */
-.hijos-directos>li{background-color: blueviolet;}
+.hijos-directos > li {
+  background-color: blueviolet;
+}
 /* Los hijos descendientes son aquellos que están a partir del segundo lugar a partir de los elementos relacionados
 con el elemento padre al que se aplica la clase(en este caso sería ul>li>b) y se deja un espacio en 
 blanco antes del elemento enla declaración de la clase */
-.hijos-descendientes b{background-color: thistle;}
-.hijos-descendientes cite{font-size: 32px;}
+.hijos-descendientes b {
+  background-color: thistle;
+}
+.hijos-descendientes cite {
+  font-size: 32px;
+}
 /* Los selectores de hermanos van a aplicar a los elementos que están al mismo nivel(en este caso li)
 y que están por debajo del elemento de referencia(aplica a todos los que están al mismo nivel y por debajo en el orden)
 Nota: no aplica en el elemento referenciado con la clase(En este caso li de Verano). */
 /* Los selectores de hermanos van a aplicar a los elementos que estén al mismo nivel
 del elemento seleccionado y no aplican al elemento seleccionados.
  Esta regla es general para todos los selectores de hermanos. */
-.hermanos-general~li{background-color: thistle;}
+.hermanos-general ~ li {
+  background-color: thistle;
+}
 /* También puede aplicar a etiquetas como por ejemplo:  */
-li~li{background-color: thistle;} /*no es recomendable porque puede aplicar a todas las etiquetas li por
+li ~ li {
+  background-color: thistle;
+} /*no es recomendable porque puede aplicar a todas las etiquetas li por
 debajo del elemento seleccionado*/
-li+li{background-color: thistle;}/*aplica solo a la etiqueta al mismo nivel y exactamente debajo del elemento
+li + li {
+  background-color: thistle;
+} /*aplica solo a la etiqueta al mismo nivel y exactamente debajo del elemento
 seleccionado.*/
 /* Los selectores de hermanos adyacentes van a aplicar a los elementos que están al mismo nivel(en este caso li)
 y que están por debajo del elemento de referencia(aplica a todos los que están al mismo nivel o 
 segundos en orden. Los demás no aplican).Solo aplicará a los hermanos que estén debajo de él
 Nota: no aplica en el elemento referenciado con la clase(En este caso li de Verano y aplica a li de Otoño solamente,
 lo cual quiere decir que solo aplicará a los hermanos que estén debajo de él). */
-.hermanos-adyacentes+li{background-color: thistle;}
+.hermanos-adyacentes + li {
+  background-color: thistle;
+}
 /* Selectores atributos */
-.selectores-atributos a[href]{color: orangered;}
-.selectores-atributos a[target="_blank"]{font-weight: bold;}
+.selectores-atributos a[href] {
+  color: orangered;
+}
+.selectores-atributos a[target="_blank"] {
+  font-weight: bold;
+}
 /* El comodín asterisco(*) aplica el estilo si 
 contiene el texto en cuestión en cualquier parte */
-.selectores-atributos a[href*="c"]{font-size: 24px;}
+.selectores-atributos a[href*="c"] {
+  font-size: 24px;
+}
 /* El comodín circunflejo(^) aplica el estilo si 
 contiene el texto en cuestión al inicio */
-.selectores-atributos a[href^="c"]{text-decoration: none;}
+.selectores-atributos a[href^="c"] {
+  text-decoration: none;
+}
 /* El comodín dólar($) aplica el estilo si 
 contiene el texto en cuestión al final */
-.selectores-atributos a[href$="s"]{background-color: black;}
+.selectores-atributos a[href$="s"] {
+  background-color: black;
+}
 /* El comodín acento(~) aplica el estilo si 
 contiene el texto en cuestión en una lista separada por espacios */
-.selectores-atributos a[class~="cursos"]{background-color: midnightblue;}
+.selectores-atributos a[class~="cursos"] {
+  background-color: midnightblue;
+}
 /* El comodín (|) aplica el estilo si 
 contiene el texto en cuestión en una lista separada por espacios 
 y después del texto en cuestión viene un guión medio(-)
 además de que la palabra antes del guión medio debe ser la primera de la lista*/
-.selectores-atributos a[class|="menu"]{font-style: italic;}
+.selectores-atributos a[class|="menu"] {
+  font-style: italic;
+}
 /* Selectoruniversal (*) */
-*{font-family: sans-serif;}
+* {
+  font-family: sans-serif;
+}
 /* El selector universal aplicada a una clase específica.Se aplica a los elementos
 que soportan esa clase. */
-.selector-universal *{font-size: 24px;}
+.selector-universal * {
+  font-size: 24px;
+}
 /* Pseudoclases->dan estilos dependiendo del contexto,posición o estado del elemento */
 /* Todos los elementos comprendidos en la clase form-pseudoclases y que tengan 
 la propiedad required tendrán este estilo */
-.form-pseudoclases *:required{
-    border-color: yellow;
+.form-pseudoclases *:required {
+  border-color: yellow;
 }
 /* Se activa al validar el elemento(Ej: En un elemento texto tener el valor correcto) */
-.form-pseudoclases *:valid{border-color: green;}
+.form-pseudoclases *:valid {
+  border-color: green;
+}
 /* Se activa al invalidar el elemento(Ej: En un elemento texto tener el valor incorrecto) */
-.form-pseudoclases *:invalid{border-color:red;}
+.form-pseudoclases *:invalid {
+  border-color: red;
+}
 /* Se activan los estilos de los elementos que responden a esta pseudoclase cuando se 
 enfocan. */
-.form-pseudoclases *:focus{background-color: skyblue;}
+.form-pseudoclases *:focus {
+  background-color: skyblue;
+}
 /* Se activan los estilos de los elementos que responden a esta pseudoclase cuando se 
 desactiva. */
-.form-pseudoclases *:disabled{background-color: pink;}
+.form-pseudoclases *:disabled {
+  background-color: pink;
+}
 /* Se activan los estilos de los elementos que responden a esta pseudoclase cuando se 
 ha visitado. */
-.menu-pseudoclases a:visited{color: olive;}
+.menu-pseudoclases a:visited {
+  color: olive;
+}
 /* Se activan los estilos de los elementos que responden a esta pseudoclase cuando se 
 pasa por encima sin seleccionarlo. */
-.menu-pseudoclases a:hover{color: orange;}
+.menu-pseudoclases a:hover {
+  color: orange;
+}
 /* Orden en que deben ir las pseudoclases:
 link
 active
@@ -110,21 +183,25 @@ visited
 hover */
 /* Esta pseudoclase se activa al pasar el mouse por encima de los elementos que son 
 afectados por la pseudoclase. */
-.p-pseudoclases:hover{font-size: 20px;}
+.p-pseudoclases:hover {
+  font-size: 20px;
+}
 /* Este identificador aplica el estilo cuando se accede al id objetivo
 en este caso el id temario-css que está al inicio de la página. */
-#temario-css:target{background-color: green;}
+#temario-css:target {
+  background-color: green;
+}
 /* Pseudoclases posicionales: aplica estilos al primer elemento li */
-.lista-pseudoclase li:first-child{
-    color: blue;
+.lista-pseudoclase li:first-child {
+  color: blue;
 }
 /* Pseudoclases posicionales: aplica estilos al último elemento li */
-.lista-pseudoclase li:last-child{
-    color: red;
+.lista-pseudoclase li:last-child {
+  color: red;
 }
 /* Pseudoclases posicionales: aplica estilos al número denotado del elemento li */
-.lista-pseudoclase li:nth-child(3){
-    color: blueviolet;
+.lista-pseudoclase li:nth-child(3) {
+  color: blueviolet;
 }
 /* Pseudoclases posicionales: aplica estilos en base al valor del múltiplo en este caso de 3*n,
 siendo n la posición de cada repetición de la ocurrencia(ej: 3*1=3 por lo que el tercer
@@ -133,62 +210,104 @@ toma los atributos declarados, 3*3=9 por lo que el noveno lugar de la fila toma 
 Nota: Se empieza a iterar n desde cero. Ej: 3*0=0, osea, no tiene elemento que representar, pero 3n+1=3*0+1=1 y
 así el primer elemento de la lista toma los atributos declarados en el bloque de definiciones del estilo CSS
 declarado.) */
-.lista-pseudoclase li:nth-child(3n){
-    background-color: cadetblue;
+.lista-pseudoclase li:nth-child(3n) {
+  background-color: cadetblue;
 }
-.lista-pseudoclase li:nth-child(3n+1){
-    color:aquamarine;
+.lista-pseudoclase li:nth-child(3n + 1) {
+  color: aquamarine;
 }
 /* Se cuentan por pares even significa par */
-.lista-pseudoclase li:nth-child(even){
-    background-color: yellow;
+.lista-pseudoclase li:nth-child(even) {
+  background-color: yellow;
 }
 /* Se cuentan por impares odd significa impar */
-.lista-pseudoclase li:nth-child(odd){
-    background-color: orange;
+.lista-pseudoclase li:nth-child(odd) {
+  background-color: orange;
 }
 /* Esta pseudo-clase aplica al primero del tipo de elemento declarado, en este p. */
-.articulo-pseudoclases p:first-of-type{background-color: pink;}
+.articulo-pseudoclases p:first-of-type {
+  background-color: pink;
+}
 /* Esta pseudo-clase aplica al último del tipo de elemento declarado, en este p. */
-.articulo-pseudoclases p:last-of-type{background-color: blue;}
+.articulo-pseudoclases p:last-of-type {
+  background-color: blue;
+}
 /* Esta pseudo-clase aplica al numero del tipo de elemento declarado, en este p. */
-.articulo-pseudoclases p:nth-of-type(3){background-color:brown ;}
+.articulo-pseudoclases p:nth-of-type(3) {
+  background-color: brown;
+}
 /* Esta pseudo-clase aplica al numero y a partir de las unidades declaradas del tipo de elemento declarado, en este p. */
-.articulo-pseudoclases p:nth-of-type(2n){background-color:aquamarine;}
+.articulo-pseudoclases p:nth-of-type(2n) {
+  background-color: aquamarine;
+}
 /* Esta pseudo-clase aplica a los pares del tipo de elemento declarado, en este p. */
-.articulo-pseudoclases p:nth-of-type(even){font-weight: bold ;}
+.articulo-pseudoclases p:nth-of-type(even) {
+  font-weight: bold;
+}
 /* Esta pseudo-clase aplica a los impares del tipo de elemento declarado, en este p. */
-.articulo-pseudoclases p:nth-of-type(odd){font-style: italic;}
+.articulo-pseudoclases p:nth-of-type(odd) {
+  font-style: italic;
+}
 /* Negación: se cluyen todos los elementos excepto los que están denotados en la siguiente clase(p) */
-.articulo-pseudoclases *:not(p){background-color: aqua;}
+.articulo-pseudoclases *:not(p) {
+  background-color: aqua;
+}
 /* Otro ejemplo de negación. Los elementos que van en ese estilo van separados por comas. */
-.articulo-pseudoclases *:not(.ejemplo,#otroejemplo){background-color: blue;}
-.form-pseudoclases li:first-of-type{color: blue;}
+.articulo-pseudoclases *:not(.ejemplo, #otroejemplo) {
+  background-color: blue;
+}
+.form-pseudoclases li:first-of-type {
+  color: blue;
+}
 /* Pseudoelementos: dan estilo a partes específicas de un elemento.Se usa (::)para diferenciarlos de las
 pseudoclases. */
 
-.saga-geminis::before{content:"❤";font-weight: bold;}
-.saga-geminis::after{content: "🐱‍👤";font-weight: bold;}
-.saga-precio::before{content:"$";font-weight: bold;}
-.saga-precio::after{content:"USD";font-weight: bold;}
-.p-pseudoelementos::first-letter{font-weight: bold; font-size: 32px;} 
-.p-pseudoelementos::first-line{color: coral;}
-.p-pseudoelementos::selection{color: greenyellow;background-color: black;}
+.saga-geminis::before {
+  content: "❤";
+  font-weight: bold;
+}
+.saga-geminis::after {
+  content: "🐱‍👤";
+  font-weight: bold;
+}
+.saga-precio::before {
+  content: "$";
+  font-weight: bold;
+}
+.saga-precio::after {
+  content: "USD";
+  font-weight: bold;
+}
+.p-pseudoelementos::first-letter {
+  font-weight: bold;
+  font-size: 32px;
+}
+.p-pseudoelementos::first-line {
+  color: coral;
+}
+.p-pseudoelementos::selection {
+  color: greenyellow;
+  background-color: black;
+}
 /* Todo lo de la página se selecciona con ese estilo */
-*::selection{color: blue;background-color: black;}
-.input-pseudoelementos::placeholder{color: green;}
+*::selection {
+  color: blue;
+  background-color: black;
+}
+.input-pseudoelementos::placeholder {
+  color: green;
+}
 /* Agrupar selectores */
 .form-agrupar-selectores input[type="text"],
 .form-agrupar-selectores input[type="email"],
-.form-agrupar-selectores textarea{
-    border-color:   yellow;
-    border-width: 2px;
-    border-style: dashed;
-    background-color: black;
-    font-size: 20px;
-    display: block;
-    width: 300px;
-    
+.form-agrupar-selectores textarea {
+  border-color: yellow;
+  border-width: 2px;
+  border-style: dashed;
+  background-color: black;
+  font-size: 20px;
+  display: block;
+  width: 300px;
 }
 /* El Algoritmo de CSS: Es la forma en que el navegador aplica los estilos al documento HTML.
 Es vital entender este concepto para que entiendas como se aplican y en algunas ocasiones se sobreescriben
@@ -212,24 +331,43 @@ Estilos en línea--------------------------------1,0,0,0 (se pone 1 en la 1a pos
 !important-----------------------Rompe la especificidad  */
 /* estilos en línea: son los estilos que van denotados con la propiedad style en la misma etiqueta */
 /* orden para un selector compuesto: Etiqueta#id.clase[selector-atributos] */
-blockquote#cita-marco.cita-marco{background-color: lightsteelblue;}
+blockquote#cita-marco.cita-marco {
+  background-color: lightsteelblue;
+}
 /* Especificidad: (0,0,0,1)  0,0,0,1 etiqueta  peso:1 */
-blockquote{background-color: burlywood;}   
- /* Especificidad: (0,1,0,1)  0,1 identificador,0,1 etiqueta  peso: 101 */
-blockquote#cita-marco{background-color: salmon;}
-/* Especificidad: (0,1,0,0) 0,1 identificador,0,0  peso: 100 */ 
-#cita-marco{background-color: lightgreen;}
+blockquote {
+  background-color: burlywood;
+}
+/* Especificidad: (0,1,0,1)  0,1 identificador,0,1 etiqueta  peso: 101 */
+blockquote#cita-marco {
+  background-color: salmon;
+}
+/* Especificidad: (0,1,0,0) 0,1 identificador,0,0  peso: 100 */
+#cita-marco {
+  background-color: lightgreen;
+}
 /* Especificidad: (0,0,1,1)  0,0,1 clase,1 etiqueta peso: 11 */
-blockquote.cita-marco{background-color: tomato;}
+blockquote.cita-marco {
+  background-color: tomato;
+}
 /* Especificidad: (0,0,1,0)  0,0,1 clase,0   peso: 10 */
-.cita-marco{background-color: cornflowerblue;}
+.cita-marco {
+  background-color: cornflowerblue;
+}
 /* La especificidad se rompe con !important. Se hace de prioridad absoluta. es considerada una mala práctica. */
-.cita-marco{background-color: mediumaquamarine !important;font-size: 25px;}
+.cita-marco {
+  background-color: mediumaquamarine !important;
+  font-size: 25px;
+}
 /* Como los dos son !important se aplica la cascada, o sea, se asume el valor del último */
-.cita-marco{background-color: beige !important;
-border-style: dotted;
-border-color: red;}
-.cita-marco>cite{font-size: 32px;}
+.cita-marco {
+  background-color: beige !important;
+  border-style: dotted;
+  border-color: red;
+}
+.cita-marco > cite {
+  font-size: 32px;
+}
 
 /* La Herencia es la capacidad de un selector de obtener(heredar) los valores de sus ancestros
 más cercanos,para aplicarla se usa el valor inherit; si queremos evitarla podemos asignar otro valor
@@ -240,12 +378,14 @@ o inicializar la propiedad en cuestion con el valor initial.
 En este ejemplo se aplica el valor inherit(herencia) sobre el color de fondo. Se cambia el tamaño
 de la letra que se hereda por defecto de blockquote, y despues ese mismo tamaño se cambia al tamaño 
 inicial que tenía la letra de cite */
-.cita-marco cite{background-color: pink;
+.cita-marco cite {
+  background-color: pink;
 
-font-size: 24px;
-font-size: initial;
-border-style: inherit;
-border-color: inherit;}
+  font-size: 24px;
+  font-size: initial;
+  border-style: inherit;
+  border-color: inherit;
+}
 /* https://web.dev/learn/css/inheritance/#which-properties-are-inheritable 
 Esta página te muestra que propiedades son heredables*/
 /*
@@ -258,4 +398,6 @@ https://caniuse.com/
 user-select:none;
 */
 
-body{background-image: url(/IMG/img7.jpg);}
+body {
+  background-image: url(/IMG/img7.jpg);
+}
